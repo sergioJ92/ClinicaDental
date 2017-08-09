@@ -15,4 +15,7 @@ Route::get('/', 'ControladorHome@index');
 Route::get('tratamientos','ControladorHome@tratamientos');
 Route::get('personal','ControladorHome@personal');
 Route::get('pacientes','ControladorHome@pacientes');
+
+Route::resource('usuario','usuarioController');
+
 Route::get('g',function(){return view('welcome');});
