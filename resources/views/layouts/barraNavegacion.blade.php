@@ -1,9 +1,11 @@
 <!doctype html>
 	<head>
-		
+		{!! MaterializeCSS::include_full() !!}
+        <link rel="stylesheet" href="http://yourdomain.com/materialize-css/css/materialize.min.css">
+        <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="http://yourdomain.com/materialize-css/js/materialize.min.js"></script>
 	</head>
 	<body>
-
 		<nav>
 		    <div class="nav-wrapper">
 		      <a href="#" class="brand-logo">Clinica Dental</a>
@@ -15,6 +17,7 @@
 		      </ul>
 		    </div>
 	    </nav>
-	    @yield('content')		
+
+	    @yield('content')
 
 	</body>
