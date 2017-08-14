@@ -4,6 +4,7 @@
         <link rel="stylesheet" href="http://yourdomain.com/materialize-css/css/materialize.min.css">
         <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="http://yourdomain.com/materialize-css/js/materialize.min.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         
         <script type="text/javascript">
         	$(document).ready(function(){

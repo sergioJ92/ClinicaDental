@@ -18,4 +18,6 @@ Route::get('pacientes','ControladorHome@pacientes');
 
 Route::resource('usuario','usuarioController');
 
+Route::resource('tratamiento','TratamientoController');
+
 Route::get('g',function(){return view('welcome');});
