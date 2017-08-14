@@ -2,7 +2,8 @@
 
 @section('content')
 	<div class="row">
-    <form class="col s12">
+    <form class="col s12" action="{{ url('usuario') }}" method="POST">
+      {{ csrf_field() }}  
       <div class="row">
         <div class="input-field col s6">
           <input placeholder="Placeholder" id="first_name" type="text" class="validate">
@@ -31,6 +32,7 @@
           <label for="email">Email</label>
         </div>
       </div>
-    </form>
+      <button type="submit"  class="waves-effect waves-light btn">Registrar</button>
+    </form> 
   </div>
 @stop
