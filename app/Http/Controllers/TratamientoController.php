@@ -3,6 +3,8 @@
 namespace ClinicaDental\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use ClinicaDental\Tratamiento;
 
 class TratamientoController extends Controller
 {
@@ -13,7 +15,8 @@ class TratamientoController extends Controller
      */
     public function index()
     {
-        //
+        $tratamientos = Tratamiento::All();
+        return view('tratamiento/lista',compact('tratamientos'));
     }
 
     /**
@@ -23,7 +26,7 @@ class TratamientoController extends Controller
      */
     public function create()
     {
-        //
+        return view('tratamiento/crear');
     }
 
     /**
@@ -34,7 +37,12 @@ class TratamientoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Tratamiento::create(['nombre'=>$request['nombre'],
+                             'descripcion'=>$request['descripcion'],
+                             'imagen'=>$request['imagen'], ]);
+
+
+        return Redirect::to('tratamiento');
     }
 
     /**

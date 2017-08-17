@@ -4,6 +4,7 @@
 		{!!Html::style('http://yourdomain.com/materialize-css/css/materialize.min.css')!!}
 		{!!Html::style('//code.jquery.com/jquery-2.1.1.min.js')!!}
 		{!!Html::style('http://yourdomain.com/materialize-css/js/materialize.min.js')!!}
+		{!!Html::style('https://fonts.googleapis.com/icon?family=Material+Icons')!!}
         
         <script type="text/javascript">
         	$(document).ready(function(){
@@ -24,13 +25,13 @@
 		        <li><a href="/">Home</a></li>
 		        <li><a href="pacientes">Pacientes</a></li>
 		        <li><a href="personal">Personal</a></li>
-		        <li><a href="tratamientos">Tratamientos</a></li>
+		        <li><a href="tratamiento">Tratamientos</a></li>
 		      </ul>
 		      <ul class="side-nav" id="mobile-demo">
 		        <li><a href="/">Home</a></li>
 		        <li><a href="pacientes">Pacientes</a></li>
 		        <li><a href="personal">Personal</a></li>
-		        <li><a href="tratamientos">Tratamientos</a></li>
+		        <li><a href="tratamiento">Tratamientos</a></li>
 		      </ul>
 		      <ul id="nav-mobile" class="right hide-on-med-and-down">
 		        <li><a href="personal">Iniciar sesion</a></li>

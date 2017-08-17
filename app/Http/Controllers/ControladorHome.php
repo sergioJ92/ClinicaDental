@@ -15,10 +15,6 @@ class ControladorHome extends Controller
         return view('index');
     }
 
-    public function tratamientos(){
-        return view('tratamientos');
-    }
-
     public function personal(){
         return view('personal');
     }
