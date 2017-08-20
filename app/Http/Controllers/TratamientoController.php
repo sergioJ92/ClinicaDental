@@ -53,7 +53,8 @@ class TratamientoController extends Controller
      */
     public function show($id)
     {
-        //
+        $tratamiento = Tratamiento::find($id);
+        return view('tratamiento/mostrar',compact('tratamiento'));
     }
 
     /**
@@ -64,7 +65,8 @@ class TratamientoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $tratamiento = Tratamiento::find($id);
+        return view("tratamiento/editar",compact('tratamiento'));
     }
 
     /**
@@ -76,7 +78,10 @@ class TratamientoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $tratamiento = Tratamiento::find($id);
+        $tratamiento->fill($request->all());
+        $tratamiento->save();
+        return Redirect::to('tratamiento');
     }
 
     /**
@@ -87,6 +92,7 @@ class TratamientoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Tratamiento::destroy($id);
+        return Redirect::to('tratamiento');
     }
 }
