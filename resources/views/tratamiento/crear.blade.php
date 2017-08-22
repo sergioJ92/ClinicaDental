@@ -2,6 +2,13 @@
 
 @section('content')
 	<div class="row">
+  @if(count($errors) > 0)
+    <ul>
+    @foreach($errors->all() as $error)
+      <li>{{$error}}</li>
+    @endforeach
+    </ul>
+  @endif
     <form class="col s12" action="{{ url('tratamiento') }}" method="POST">
       {{ csrf_field() }}  
       <div class="row">

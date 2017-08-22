@@ -17,7 +17,7 @@ class CreateTratamientosTable extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->string('descripcion');
-            $table->string('imagen');
+            $table->string('imagen')->nullable();
             $table->timestamps();
         });
     }

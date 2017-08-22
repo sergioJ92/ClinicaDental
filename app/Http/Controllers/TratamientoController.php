@@ -3,6 +3,7 @@
 namespace ClinicaDental\Http\Controllers;
 
 use Illuminate\Http\Request;
+use ClinicaDental\Http\Requests\TratamientoRequest;
 use Illuminate\Support\Facades\Redirect;
 use ClinicaDental\Tratamiento;
 
@@ -15,7 +16,7 @@ class TratamientoController extends Controller
      */
     public function index()
     {
-        $tratamientos = Tratamiento::All();
+        $tratamientos = Tratamiento::paginate(6);
         return view('tratamiento/lista',compact('tratamientos'));
     }
 
@@ -35,7 +36,7 @@ class TratamientoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TratamientoRequest $request)
     {
         Tratamiento::create(['nombre'=>$request['nombre'],
                              'descripcion'=>$request['descripcion'],
