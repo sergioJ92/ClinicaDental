@@ -1,7 +1,7 @@
 
-		@extends('layouts.barraNavegacion')
+	@extends('layouts.barraNavegacion')
 
-		@section('content')	
+	@section('content')	
 
-				<h1>hola soy la vista de Pacientes</h1>	
-		@stop
+		<h1>hola soy la vista de Pacientes</h1>	
+	@stop

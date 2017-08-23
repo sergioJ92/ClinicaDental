@@ -3,6 +3,9 @@
 namespace ClinicaDental\Http\Controllers;
 
 use Illuminate\Http\Request;
+use ClinicaDental\Usuario;
+use Session;
+use Redirect;
 
 class usuarioController extends Controller
 {
@@ -13,7 +16,8 @@ class usuarioController extends Controller
      */
     public function index()
     {
-        //return view('usuarios.admin');
+        $usuarios = Usuario::All();
+        return view("usuario.index",compact('usuarios'));
     }
 
     /**
@@ -35,7 +39,15 @@ class usuarioController extends Controller
     public function store(Request $request)
     //public function store()
     {
-        return "Aqui estoy";
+        Usuario::create([
+            'nombre' => $request['nombre'],
+            'apellido' => $request['apellido'],
+            'usuario' => $request['usuario'],
+            'password' => $request['password'],
+            'email' => $request['email']
+            ]);
+
+        return redirect('/usuario')->with('menssage','store');
     }
 
     /**
@@ -56,8 +68,10 @@ class usuarioController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
+    {   
+        $usuario = Usuario::find($id);
+        return view('usuario.editar',['usuario' => $usuario]);
+
     }
 
     /**
@@ -69,7 +83,10 @@ class usuarioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $usuario = Usuario::find($id);
+        $usuario->fill($request->all());
+        $usuario->save(); 
+        return redirect('/usuario');
     }
 
     /**
