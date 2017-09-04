@@ -15,7 +15,9 @@
         </script>
 	</head>
 	<body>
-		<nav class="nav-extended">
+	  <header>
+		<div class="navbar-fixed">
+		<nav class="nav-extended light-blue darken-1">
 		    <div class="nav-wrapper">
 		      <a href="#" class="brand-logo">Clinica Dental</a>
 		    </div>
@@ -40,6 +42,13 @@
 		    </div>
 
 	    </nav>
-	    @yield('content')
+	    </div>
+	   </header>
+	   <div class="container">
+
+	   		<section style="padding-top: 8%;">
+	    		@yield('content')
+	   		</section>
+	   	</div>
 
 	</body>
