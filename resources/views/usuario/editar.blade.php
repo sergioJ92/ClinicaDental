@@ -1,13 +1,17 @@
 
-	@extends('layouts.barraNavegacion')
+	@extends('layouts.barraAdmin')
 
-	@section('content')	
+	@section('barraAdminContent')	
 	  <h1>soy el formulario de  editar usuario</h1>
 	  <div class="row">
-	    <form class="col s12" action="{{ route('usuario.update', $usuario->id) }}" method='POST'>
-	      {{ method_field('PUT') }}
-	      @include('usuario.form.formulario ')
-	      
-	    </form> 
+	    {!!Form::model($usuario, ['route'=> ['usuario.update',$usuario->id], 'method'=>'PUT'])!!}
+
+	      @include('usuario.form.formulario')
+	      <button type="submit"  class="waves-effect waves-light btn">Guardar</button>
+	    {!!Form::close()!!}
+
+	    {!!Form::model($usuario, ['route'=> ['usuario.destroy',$usuario->id], 'method'=>'DELETE'])!!}
+	    	<button type="submit" class="waves-effect waves-light btn">Eliminar</button>
+	    {!!Form::close()!!}
 	  </div>
 	@stop

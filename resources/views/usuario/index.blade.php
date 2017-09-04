@@ -1,16 +1,17 @@
 
-	@extends('layouts.barraNavegacion')
+	@extends('layouts.barraAdmin')
 
-	<?php $menssage=Session::get('menssage') ?>
-
-		@if(Session::has('message')){
-			<div class="card-panel green lighten-4 green-text text-darken-4"><b>Success!</b> This alert box indicates a successful or positive action.</div>
+		@if(Session::has('mensaje')){
+			<div style="color: green">
+				<b>Success!  This alert box indicates a successful or positive action.</b> 
+				{{Session::get('mensaje')}}
+			</div>
 		}
 		@endif
 
-	@section('content')	
-
-	<h3>Usuarios registrados</h3>
+	@section('barraAdminContent')	
+	<p>Tabla de usuarios creados de la institucion</p>
+	<a href="{{ url('usuario/create') }}" class="waves-effect warves-light btn" method="GET">Crear usuario</a>
 	<table class="table">
 		<thead>
 			<tr>
@@ -30,7 +31,6 @@
 					<th>{{$usuario->email}}</th>
 					<th>
 						<a href="/usuario/{{$usuario->id}}/edit">Editar</a>
-						<a href="">Eliminar</a>
 					</th>
 				</tr>
 			</tbody>

@@ -2,6 +2,8 @@
 
 namespace ClinicaDental\Http\Controllers;
 
+use ClinicaDental\Http\Requests\UsuarioCreateRequest;
+use ClinicaDental\Http\Requests\UsuarioUpdateRequest;
 use Illuminate\Http\Request;
 use ClinicaDental\Usuario;
 use Session;
@@ -36,7 +38,7 @@ class usuarioController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UsuarioCreateRequest $request)
     //public function store()
     {
         Usuario::create([
@@ -46,8 +48,8 @@ class usuarioController extends Controller
             'password' => $request['password'],
             'email' => $request['email']
             ]);
-
-        return redirect('/usuario')->with('menssage','store');
+        Session::flash('mensaje','Usuario Creado correctamente'); 
+        return redirect('/usuario');
     }
 
     /**
@@ -70,6 +72,7 @@ class usuarioController extends Controller
     public function edit($id)
     {   
         $usuario = Usuario::find($id);
+        Session::flash('mensaje','Usuario editado correctamente'); 
         return view('usuario.editar',['usuario' => $usuario]);
 
     }
@@ -85,8 +88,9 @@ class usuarioController extends Controller
     {
         $usuario = Usuario::find($id);
         $usuario->fill($request->all());
-        $usuario->save(); 
-        return redirect('/usuario');
+        $usuario->save();
+        Session::flash('mensaje','Usuario creado correctamente'); 
+        return redirect::to('/usuario');
     }
 
     /**
@@ -97,6 +101,8 @@ class usuarioController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Usuario::destroy($id);
+        Session::flash('mensaje','Usuario eliminado correctamente');
+        return redirect::to('/usuario');
     }
 }
