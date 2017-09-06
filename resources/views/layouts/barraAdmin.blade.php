@@ -5,7 +5,8 @@
 		{!!Html::style('//code.jquery.com/jquery-2.1.1.min.js')!!}
 		{!!Html::style('http://yourdomain.com/materialize-css/js/materialize.min.js')!!}
 		{!!Html::style('https://fonts.googleapis.com/icon?family=Material+Icons')!!}
-        
+		{!!Html::style('css/estilos.css')!!}
+		<link rel="stylesheet" type="text/css" href="public/css/estilos.css">
         <script type="text/javascript">
         	$(document).ready(function(){
         		$(".button-collapse").sideNav();

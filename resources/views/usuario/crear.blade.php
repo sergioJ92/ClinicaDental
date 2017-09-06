@@ -2,13 +2,14 @@
 
 @section('barraAdminContent')
 	@if(count($errors) > 0)
-		<div style="color: green">
-			<b>Success!  This alert box indicates a successful or positive action.</b>
-			<ul> 
-			@foreach($errors->all() as $error)
-				<li>{{$error}}</li>
-			@endforeach
-			</ul>
+		<div class="alert">
+			 <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+			 <b>Success!  This alert box indicates a successful or positive action.</b>
+				<ul> 
+				@foreach($errors->all() as $error)
+					<li>{{$error}}</li>
+				@endforeach
+				</ul>
 		</div>
 	@endif
 

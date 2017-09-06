@@ -2,6 +2,7 @@
 	@extends('layouts.barraAdmin')
 
 		@if(Session::has('mensaje')){
+			
 			<div style="color: green">
 				<b>Success!  This alert box indicates a successful or positive action.</b> 
 				{{Session::get('mensaje')}}
