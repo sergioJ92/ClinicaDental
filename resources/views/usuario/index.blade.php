@@ -1,13 +1,12 @@
 
 	@extends('layouts.barraAdmin')
 
-		@if(Session::has('mensaje')){
-			
-			<div style="color: green">
-				<b>Success!  This alert box indicates a successful or positive action.</b> 
-				{{Session::get('mensaje')}}
+		@if(Session::has('mensaje'))
+
+			<div class="Success">
+				 <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+				 <b>{{Session::get('mensaje')}}</b>
 			</div>
-		}
 		@endif
 
 	@section('barraAdminContent')	

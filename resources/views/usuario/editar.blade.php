@@ -13,5 +13,8 @@
 	    {!!Form::model($usuario, ['route'=> ['usuario.destroy',$usuario->id], 'method'=>'DELETE'])!!}
 	    	<button type="submit" class="waves-effect waves-light btn">Eliminar</button>
 	    {!!Form::close()!!}
+	    
 	  </div>
+	  <a href="{{'/usuario'}}" class="waves-effect waves-light btn">Cancelar</a>
+
 	@stop

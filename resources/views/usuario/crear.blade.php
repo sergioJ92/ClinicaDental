@@ -2,9 +2,9 @@
 
 @section('barraAdminContent')
 	@if(count($errors) > 0)
-		<div class="alert">
+		<div class="alerta">
 			 <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-			 <b>Success!  This alert box indicates a successful or positive action.</b>
+			 <b>Alerta!  Los suigientes campos deben llenarce obligatoriamente</b>
 				<ul> 
 				@foreach($errors->all() as $error)
 					<li>{{$error}}</li>

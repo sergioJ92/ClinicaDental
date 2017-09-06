@@ -89,7 +89,7 @@ class usuarioController extends Controller
         $usuario = Usuario::find($id);
         $usuario->fill($request->all());
         $usuario->save();
-        Session::flash('mensaje','Usuario creado correctamente'); 
+        Session::flash('mensaje','Usuario editado correctamente'); 
         return redirect::to('/usuario');
     }
 

@@ -1,7 +1,7 @@
-/* The alert message box */
-.alert {
+/* alerta para casos negativos */
+.alerta {
     padding: 20px;
-    background-color: #f2dede; /* Red */
+    background-color: #dff0d8; /* Red */
     color: #a94442;
     margin-bottom: 15px;
     border-color: #ebccd1;
@@ -17,6 +17,14 @@
     line-height: 20px;
     cursor: pointer;
     transition: 0.3s;
+}
+/*alerta para casos positivos*/
+.success {
+    padding: 20px;
+    background-color: #dff0d8; /* Red */
+    color: #3c763d;
+    margin-bottom: 15px;
+    border-color: #d6e9c6;
 }
 
 /* When moving the mouse over the close button */
